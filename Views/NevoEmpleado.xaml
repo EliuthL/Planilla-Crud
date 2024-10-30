@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Planilla_Crud.Views.NevoEmpleado"
+             Title="Nevo Empleado">
+    <VerticalStackLayout>
+        <Grid Padding="20"
+              RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
+              ColumnDefinitions="Auto, *"
+              RowSpacing="10">
+
+            <!-- Etiqueta Nombre -->
+            <Label Text="Nombre:"
+               Grid.Row="0"
+               Grid.Column="0"
+               VerticalOptions="Center" />
+            <!-- Campo de entrada para Nombre -->
+            <Entry Placeholder="Ingrese nombre"
+               Grid.Row="0"
+               Grid.Column="1"
+               Text="{Binding Nombre}" />
+
+            <!-- Etiqueta Fecha de Inicio -->
+            <Label Text="Fecha de Inicio:"
+               Grid.Row="1"
+               Grid.Column="0"
+               VerticalOptions="Center" />
+            <!-- Selector de Fecha -->
+            <DatePicker Date="{Binding FechaInicio}"
+                    Grid.Row="1"
+                    Grid.Column="1" />
+
+            <!-- Etiqueta Salario -->
+            <Label Text="Salario:"
+               Grid.Row="2"
+               Grid.Column="0"
+               VerticalOptions="Center" />
+            <!-- Campo de entrada para Salario -->
+            <Entry Placeholder="Ingrese salario"
+               Keyboard="Numeric"
+               Grid.Row="2"
+               Grid.Column="1"
+               Text="{Binding Salario}" />
+
+            <!-- Etiqueta Cargo -->
+            <Label Text="Cargo:"
+               Grid.Row="3"
+               Grid.Column="0"
+               VerticalOptions="Center" />
+            <!-- Picker para seleccionar el Cargo -->
+            <Picker Title="Seleccione un cargo"
+                ItemsSource="{Binding Cargos}"
+                Grid.Row="3"
+                Grid.Column="1"
+                ItemDisplayBinding="{Binding Nombre}"
+                x:Name="cargosPicker"/>
+
+            <!-- Botón Guardar (ocupa dos columnas) -->
+            <Button Text="Guardar"
+                Grid.Row="4"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center"
+                Margin="0,20,0,0"
+                BackgroundColor="#2196F3"
+                TextColor="White"
+                CornerRadius="10"
+                x:Name="guardarButton"
+                Clicked="guardarButton_Clicked"/>
+
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
