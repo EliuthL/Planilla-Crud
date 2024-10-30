@@ -16,9 +16,9 @@
                VerticalOptions="Center" />
             <!-- Campo de entrada para Nombre -->
             <Entry Placeholder="Ingrese nombre"
+               x:Name="nombreEntry"
                Grid.Row="0"
-               Grid.Column="1"
-               Text="{Binding Nombre}" />
+               Grid.Column="1"/>
 
             <!-- Etiqueta Fecha de Inicio -->
             <Label Text="Fecha de Inicio:"
@@ -27,6 +27,7 @@
                VerticalOptions="Center" />
             <!-- Selector de Fecha -->
             <DatePicker Date="{Binding FechaInicio}"
+                    x:Name="datePicker"
                     Grid.Row="1"
                     Grid.Column="1" />
 
@@ -37,16 +38,17 @@
                VerticalOptions="Center" />
             <!-- Campo de entrada para Salario -->
             <Entry Placeholder="Ingrese salario"
+               x:Name="salaryEntry"
                Keyboard="Numeric"
                Grid.Row="2"
-               Grid.Column="1"
-               Text="{Binding Salario}" />
+               Grid.Column="1"/>
 
             <!-- Etiqueta Cargo -->
             <Label Text="Cargo:"
                Grid.Row="3"
                Grid.Column="0"
-               VerticalOptions="Center" />
+               VerticalOptions="Center"
+               />
             <!-- Picker para seleccionar el Cargo -->
             <Picker Title="Seleccione un cargo"
                 ItemsSource="{Binding Cargos}"
