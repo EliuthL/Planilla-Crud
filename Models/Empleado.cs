@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Planilla_Crud.Models
 {
-    internal class Empleado
+    public class Empleado
     {
         public string? Nombre { get; set; }
         public DateTime FechaInicio { get; set; }

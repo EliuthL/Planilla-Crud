@@ -67,6 +67,7 @@ public partial class NevoEmpleado : ContentPage
 
             // Mostrar un mensaje de éxito
             await DisplayAlert("Éxito", "Empleado guardado correctamente.", "OK");
+            await Shell.Current.GoToAsync(".."); // Regresar a la página anterior
         }
         catch (Exception ex)
         {
